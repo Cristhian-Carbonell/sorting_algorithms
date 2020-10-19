@@ -26,3 +26,16 @@ void selection_sort(int *array, size_t size)
 		}
 	}
 }
+
+/**
+ * swap - swaps the values of two integers
+ * @xp: pointer to int to be swapped
+ * @yp: pointer to other int to be swapped
+ */
+void swap(int *xp, int *yp)
+{
+	size_t temp = *xp;
+
+	*xp = *yp;
+	*yp = temp;
+}
