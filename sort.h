@@ -27,5 +27,6 @@ void swap_nodes(listint_t *index);
 void swap_node(listint_t *index);
 void swapLast(listint_t *index);
 void swapTwo(listint_t *index);
+void selection_sort(int *array, size_t size);
 
 #endif /* SORT_H */
