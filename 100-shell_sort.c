@@ -7,22 +7,29 @@
  */
 void shell_sort(int *array, size_t size)
 {
-	size_t i, j, gap;
-	int temp, n = size + 1;
+	size_t i = 0, outer, inner;
+	size_t interval = size + 1;
+	int valueToInsert;
 
 	if (array == NULL)
 		return;
-	for (gap = (n * 3) + 1; gap > 0; gap /= 2)
+	while (interval <= size/3)
+		interval = interval * 3 + 1;
+	while (interval > 0)
 	{
-		for (i = gap; i < size; i++)
+		for (outer = interval; outer < size; outer++)
 		{
-			temp = array[i];
-			for (j = i; j >= gap && array[j - gap] > temp; j -= gap)
+			valueToInsert = array[outer];
+			inner = outer;
+			while (inner > interval - 1 && array[inner - interval] >= valueToInsert)
 			{
-				array[j] = array[j - gap];
+				array[inner] = array[inner - interval];
+				inner -= interval;
 			}
-			array[j] = temp;
+			array[inner] = valueToInsert;
 		}
+		interval = (interval + 1) / 3;
+		i++;
 		print_array(array, size);
 	}
 }
