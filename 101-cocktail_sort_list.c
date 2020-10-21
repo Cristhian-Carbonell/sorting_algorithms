@@ -42,11 +42,11 @@ void cocktail_sort_list(listint_t **list)
 
 /**
  * swap_node_cocktail - exchange of two nodes
- * @current1: current node
- * @current2:
+ * @node1: current first node
+ * @node2: current second node
  * @list: doubly linked list
  */
-void swap_node_cocktail(listint_t *current1, listint_t *current2, listint_t **list)
+void swap_node_cocktail(listint_t *node1, listint_t *node2, listint_t **list)
 	{
 	if (current2->next != NULL)
 		current2->next->prev = current1;
