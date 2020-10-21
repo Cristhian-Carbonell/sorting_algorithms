@@ -48,21 +48,21 @@ void cocktail_sort_list(listint_t **list)
  */
 void swap_node_cocktail(listint_t *node1, listint_t *node2, listint_t **list)
 	{
-	if (current2->next != NULL)
-		current2->next->prev = current1;
-	if (current1->prev != NULL)
+	if (node2->next != NULL)
+		node2->next->prev = node1;
+	if (node1->prev != NULL)
 	{
-		current2->prev = current1->prev;
-		current2->prev->next = current2;
+		node2->prev = node1->prev;
+		node2->prev->next = node2;
 	}
 	else
 	{
-		current2->prev = NULL;
-		*list = current2;
+		node2->prev = NULL;
+		*list = node2;
 	}
-	current1->prev = current1->next;
-	current1->next = current2->next;
-	current1->prev->next = current1;
-	current2->next = current1;
+	node1->prev = node1->next;
+	node1->next =  node2->next;
+	node1->prev->next =  node1;
+	node2->next = node1;
 	print_list(*list);
 }
