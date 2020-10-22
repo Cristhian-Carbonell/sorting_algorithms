@@ -20,7 +20,10 @@ void merge_sort(int *array, size_t size)
 }
 
 /**
- *
+ * recursion_merge - call of the function
+ * @array: elemete array
+ * @size: array size
+ * @temp: temporary array for malloc
  */
 void recursion_merge(int *array, size_t size, int *temp)
 {
@@ -36,7 +39,12 @@ void recursion_merge(int *array, size_t size, int *temp)
 }
 
 /**
- *
+ * merge - merges two subarrays of array
+ * @array1: Firts subarray
+ * @array2: secong subarray
+ * @m: array size1
+ * @size: array size2
+ * @temp: temporary array whete the two subarray will merge
  */
 void merge(int *array1, int *array2, int m, size_t size, int *temp)
 {
