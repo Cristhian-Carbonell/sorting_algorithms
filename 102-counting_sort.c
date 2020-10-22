@@ -9,14 +9,14 @@
 void counting_sort(int *array, size_t size)
 {
 	int *output = NULL, *count = NULL;
-	int i, j, max = array[0];
+	int i, j, max = 0;
 
 	if (array == NULL || size < 2)
 		return;
 	for (i = 0; i < (int)size; i++)
-		if (max < array[i])
+		if (array[i] > max)
 			max = array[i];
-	max = max + 1;
+	max++;
 	count = malloc((size + 1) * sizeof(int));
 	if (count == NULL)
 		return;
